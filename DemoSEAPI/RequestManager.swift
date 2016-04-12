@@ -10,9 +10,11 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+
 class RequestManager {
 var searchResults = [JSON]()
-    
+   
+  
     //for pagination condition check
     var pageNumber = 1
     var pageString: String {

@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 import ImageLoader
 
-class MainTableViewController: UITableViewController, UISearchBarDelegate{
+class MainTableViewController: UITableViewController, UISearchBarDelegate {
 
     
     var searchController = UISearchController(searchResultsController: nil)
@@ -37,7 +37,6 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate{
     searchController.dimsBackgroundDuringPresentation = false
     searchController.hidesNavigationBarDuringPresentation = false
     definesPresentationContext = true
-        
         
     NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainTableViewController.updateSearchResults), name: "searchResultsUpdated", object: nil)
         
@@ -81,7 +80,8 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate{
         cell.nameLabel?.text = searchResults[indexPath.row]["owner"]["display_name"].stringValue
         cell.questionLabel?.text = searchResults[indexPath.row]["title"].stringValue
         cell.avatarLabel.load(searchResults[indexPath.row]["owner"]["profile_image"].stringValue)
-
+        
+        
       
         if indexPath.row == searchResults.count - 10 {
             if requestManager.hasMore {
@@ -112,10 +112,23 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate{
     // MARK: - Table view data source
     
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
     
+        
+    }
     
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "showPost" {
+//            if let indexPath = tableView.indexPathForSelectedRow {
+//                let destinationController = segue.destinationViewController as! ShowPostViewController
+//                destinationController. = searchResults[indexPath.row]
+//            }
+//        }
+//    }
     
-    
+    @IBAction func close(segue:UIStoryboardSegue) {
+        
+    }
     
     
 

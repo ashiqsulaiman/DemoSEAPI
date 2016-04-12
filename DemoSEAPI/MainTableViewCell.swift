@@ -14,6 +14,7 @@ class MainTableViewCell: UITableViewCell {
     @IBOutlet weak var avatarLabel: UIImageView!
     @IBOutlet weak var tagLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var imageButton: UIButton!
     
     
         
