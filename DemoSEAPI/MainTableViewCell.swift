@@ -8,30 +8,32 @@
 
 import UIKit
 
-class MainTableViewCell: UITableViewCell {
+protocol MainTableViewCellDelegate {    
+    func profilePicTouchedAtIndex(index: Int)
+}
+
+//MainTableViewCell adopts to the PPicImageViewDelegate protocol
+
+class MainTableViewCell: UITableViewCell, PPicImageViewDelegate {
+
+    weak var delegates : MainTableViewController? = nil
 
     @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var avatarLabel: UIImageView!
+    @IBOutlet weak var avatarLabel: PPicImageView!
     @IBOutlet weak var tagLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var imageButton: UIButton!
-    
-    
-        
-    override func awakeFromNib() {
+    //@IBOutlet weak var imageButton: UIButton!
+    var rowIndex: Int = 0
 
+    override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        
-        
-        
+        avatarLabel.delegate = self
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    // adopts to the PPicImageViewDelegate protocol by implementing the pic tapped function
+    func ppicTapped() {
+        print(rowIndex)
+        delegates!.profilePicTouchedAtIndex(rowIndex)
     }
-
 }

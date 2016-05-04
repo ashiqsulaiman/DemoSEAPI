@@ -10,8 +10,14 @@ import UIKit
 
 class ShowPostViewController: UIViewController {
 
+    var url : String = ""
+    
+    @IBOutlet weak var webView: UIWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let httpurl = NSURL(string: url);
+        webView.loadRequest(NSURLRequest(URL: httpurl!))
 
         // Do any additional setup after loading the view.
     }

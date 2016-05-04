@@ -11,9 +11,10 @@ import Alamofire
 import SwiftyJSON
 import ImageLoader
 
-class MainTableViewController: UITableViewController, UISearchBarDelegate {
-
+class MainTableViewController: UITableViewController, UISearchBarDelegate, MainTableViewCellDelegate {
     
+    let dc =  DataClass()
+   
     var searchController = UISearchController(searchResultsController: nil)
     let requestManager = RequestManager()
     
@@ -32,6 +33,8 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+        
     searchController.searchBar.delegate = self
     tableView.tableHeaderView = searchController.searchBar
     searchController.dimsBackgroundDuringPresentation = false
@@ -43,6 +46,10 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate {
         //Enabling self sizing cells
         tableView.estimatedRowHeight = 80.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        
+     
+        
  }
     
     func updateSearchResults() {
@@ -82,7 +89,9 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate {
         cell.avatarLabel.load(searchResults[indexPath.row]["owner"]["profile_image"].stringValue)
         
         
-      
+        cell.rowIndex = indexPath.row
+        cell.delegates = self
+        
         if indexPath.row == searchResults.count - 10 {
             if requestManager.hasMore {
                 requestManager.getNextPage(validatedText)
@@ -104,32 +113,36 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate {
         
     }
   
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowPost" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let _url = searchResults[indexPath.row]["link"].stringValue
+                let destinationController = segue.destinationViewController as! ShowPostViewController
+                destinationController.url = _url
+            }
+        }
     }
-    
-    // MARK: - Table view data source
-    
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-    
-        
-    }
-    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "showPost" {
-//            if let indexPath = tableView.indexPathForSelectedRow {
-//                let destinationController = segue.destinationViewController as! ShowPostViewController
-//                destinationController. = searchResults[indexPath.row]
-//            }
-//        }
-//    }
     
     @IBAction func close(segue:UIStoryboardSegue) {
         
     }
     
-    
+   
+//    @IBAction func showProfileInfo(sender: AnyObject) {
+//        print("tapped")
+//    }
+//    
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        showProfileInfo(indexPath.row)
+//    }
+   
 
+    func profilePicTouchedAtIndex(index: Int) {
+        print("ppic touched at rowIndex : \(index)")
+        
+        performSegueWithIdentifier("ProfileInfo", sender: nil)
+        
+        
+    }
+    
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BBAABC61CD47A8A0007E091 /* DataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBAABC51CD47A8A0007E091 /* DataClass.swift */; };
 		650F993C1C0DA09B00540E8D /* DiskcachedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F993B1C0DA09B00540E8D /* DiskcachedTests.swift */; };
 		650F99401C0DBD5B00540E8D /* ManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F993F1C0DBD5B00540E8D /* ManagerTests.swift */; };
 		650F99421C0EC16E00540E8D /* UIImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F99411C0EC16E00540E8D /* UIImageViewTests.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5BBAABC51CD47A8A0007E091 /* DataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataClass.swift; sourceTree = "<group>"; };
 		650F993B1C0DA09B00540E8D /* DiskcachedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskcachedTests.swift; sourceTree = "<group>"; };
 		650F993F1C0DBD5B00540E8D /* ManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerTests.swift; sourceTree = "<group>"; };
 		650F99411C0EC16E00540E8D /* UIImageViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewTests.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				65B2CF1319EF9F6600DA3605 /* ImageLoader */,
 				65B2CF2019EF9F6600DA3605 /* ImageLoaderTests */,
 				65B2CF1219EF9F6600DA3605 /* Products */,
+				5BBAABC51CD47A8A0007E091 /* DataClass.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -278,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BBAABC61CD47A8A0007E091 /* DataClass.swift in Sources */,
 				A17327831A45D793000D10E0 /* Diskcached.swift in Sources */,
 				65677D061C0EF4F300120684 /* UIImageView+ImageLoader.swift in Sources */,
 				65C68E6119F502B20053E66D /* ImageLoader.swift in Sources */,
