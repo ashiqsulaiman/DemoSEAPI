@@ -46,7 +46,7 @@ var searchResults = [JSON]()
                 
             }
         
-        
+         
     }
     
     //to load the next page
