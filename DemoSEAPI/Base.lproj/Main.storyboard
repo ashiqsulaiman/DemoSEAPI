@@ -29,14 +29,89 @@
                                     <segue destination="s55-cG-dsJ" kind="unwind" unwindAction="close:" id="Qbx-D5-Lb4"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JMY-sd-XEA">
+                                <rect key="frame" x="60" y="64" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="HuV-dS-3c8"/>
+                                    <constraint firstAttribute="width" constant="200" id="PB3-Fu-vH3"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                        <integer key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVv-0Q-fXp">
+                                <rect key="frame" x="60" y="323" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLe-jm-D68">
+                                <rect key="frame" x="60" y="366" width="62" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="4zG-Qd-sdd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reputation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jbb-ey-lQp">
+                                <rect key="frame" x="60" y="407" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2N-8R-piU">
+                                <rect key="frame" x="156" y="366" width="131" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reputation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRP-id-gay">
+                                <rect key="frame" x="156" y="407" width="131" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kos-44-YhT">
+                                <rect key="frame" x="156" y="323" width="131" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="JMY-sd-XEA" firstAttribute="top" secondItem="9Zb-PK-xjb" secondAttribute="bottom" constant="6" id="1Zn-1o-QmH"/>
                             <constraint firstItem="9Zb-PK-xjb" firstAttribute="trailing" secondItem="sB8-c6-3pr" secondAttribute="trailingMargin" id="2Lf-HR-qEs"/>
                             <constraint firstItem="9Zb-PK-xjb" firstAttribute="top" secondItem="mtn-Pr-Xz3" secondAttribute="bottom" constant="8" id="3aa-9F-o8J"/>
+                            <constraint firstItem="tLe-jm-D68" firstAttribute="baseline" secondItem="I2N-8R-piU" secondAttribute="baseline" id="54l-nz-BSj"/>
+                            <constraint firstItem="Jbb-ey-lQp" firstAttribute="top" secondItem="tLe-jm-D68" secondAttribute="bottom" constant="20" id="7X0-7A-wbp"/>
+                            <constraint firstItem="tLe-jm-D68" firstAttribute="leading" secondItem="Jbb-ey-lQp" secondAttribute="leading" id="CKH-eo-Fgr"/>
+                            <constraint firstItem="I2N-8R-piU" firstAttribute="trailing" secondItem="cRP-id-gay" secondAttribute="trailing" id="Dn6-ER-MdC"/>
+                            <constraint firstItem="kos-44-YhT" firstAttribute="trailing" secondItem="I2N-8R-piU" secondAttribute="trailing" id="EaH-f8-2bn"/>
+                            <constraint firstItem="dVv-0Q-fXp" firstAttribute="leading" secondItem="JMY-sd-XEA" secondAttribute="leading" id="FLO-kR-x4c"/>
+                            <constraint firstItem="JMY-sd-XEA" firstAttribute="centerX" secondItem="sB8-c6-3pr" secondAttribute="centerX" id="J20-mc-lIo"/>
+                            <constraint firstItem="dVv-0Q-fXp" firstAttribute="baseline" secondItem="kos-44-YhT" secondAttribute="baseline" id="J4R-Fo-idu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kos-44-YhT" secondAttribute="trailing" constant="17" id="MOc-Od-d6K"/>
+                            <constraint firstItem="kos-44-YhT" firstAttribute="leading" secondItem="I2N-8R-piU" secondAttribute="leading" id="Rmg-2q-02t"/>
+                            <constraint firstItem="I2N-8R-piU" firstAttribute="leading" secondItem="tLe-jm-D68" secondAttribute="trailing" constant="34" id="TZf-F7-teL"/>
+                            <constraint firstItem="Jbb-ey-lQp" firstAttribute="baseline" secondItem="cRP-id-gay" secondAttribute="baseline" id="ZYm-04-hnk"/>
+                            <constraint firstItem="I2N-8R-piU" firstAttribute="leading" secondItem="cRP-id-gay" secondAttribute="leading" id="b2P-Q5-M7k"/>
+                            <constraint firstItem="tLe-jm-D68" firstAttribute="top" secondItem="dVv-0Q-fXp" secondAttribute="bottom" constant="22" id="e99-Zi-Ie9"/>
+                            <constraint firstItem="dVv-0Q-fXp" firstAttribute="top" secondItem="JMY-sd-XEA" secondAttribute="bottom" constant="59" id="iwW-Rz-JN5"/>
+                            <constraint firstItem="dVv-0Q-fXp" firstAttribute="leading" secondItem="tLe-jm-D68" secondAttribute="leading" id="pfQ-Um-07t"/>
+                            <constraint firstItem="kos-44-YhT" firstAttribute="leading" secondItem="dVv-0Q-fXp" secondAttribute="trailing" constant="8" symbolic="YES" id="ws7-I3-aXh"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="userIDLabel" destination="I2N-8R-piU" id="PWo-t1-8F4"/>
+                        <outlet property="userNameLabel" destination="kos-44-YhT" id="lTG-wr-ofW"/>
+                        <outlet property="userPPImageView" destination="JMY-sd-XEA" id="GcJ-wc-z4o"/>
+                        <outlet property="userReputationLabel" destination="cRP-id-gay" id="SwL-7c-4eK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHd-Yd-qPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="s55-cG-dsJ" userLabel="Exit" sceneMemberID="exit"/>

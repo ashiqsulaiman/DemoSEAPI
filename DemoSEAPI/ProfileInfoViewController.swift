@@ -9,19 +9,28 @@
 import UIKit
 
 class ProfileInfoViewController: UIViewController {
+    
+    var userName: String = ""
+    var userId: String = ""
+    var userReputation: String = ""
+    var ppImageString: String = ""
+    
+    
+
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userIDLabel: UILabel!
+    @IBOutlet weak var userReputationLabel: UILabel!
+    @IBOutlet weak var userPPImageView: UIImageView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        userNameLabel.text = userName
+ 
     }
     
 
-  
+ 
 
 }

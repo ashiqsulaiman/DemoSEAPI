@@ -13,7 +13,7 @@ import ImageLoader
 
 class MainTableViewController: UITableViewController, UISearchBarDelegate, MainTableViewCellDelegate {
     
-    let dc =  DataClass()
+    
    
     var searchController = UISearchController(searchResultsController: nil)
     let requestManager = RequestManager()
@@ -120,6 +120,25 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate, MainT
                 let destinationController = segue.destinationViewController as! ShowPostViewController
                 destinationController.url = _url
             }
+            else if segue.identifier == "ProfileInfo" {
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    
+                    let _userName = searchResults[indexPath.row]["owner"]["display_name"].stringValue
+                    // print("name dc: \(destinationController.userName)")
+                    let _userId = searchResults[indexPath.row]["owner"]["user_id"].stringValue
+                    let _userReputation = searchResults[indexPath.row]["owner"]["reputation"].stringValue
+                    let _ppImageString = searchResults[indexPath.row]["owner"]["profile_image"].stringValue
+                    let destinationController = segue.destinationViewController as! ProfileInfoViewController
+                    destinationController.userName = _userName
+                    destinationController.userId = _userId
+                    destinationController.userReputation = _userReputation
+                    destinationController.ppImageString = _ppImageString
+
+                    
+                }
+            }
+            
+            
         }
     }
     
@@ -144,5 +163,15 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate, MainT
         
         
     }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "ProfileInfo" {
+//            if let indexPath = tableView.indexPathForSelectedRow {
+//                let _url = searchResults[indexPath.row]["link"].stringValue
+//                let destinationController = segue.destinationViewController as! ShowPostViewController
+//                destinationController.url = _url
+//            }
+//        }
+//    }
+
     
 }
