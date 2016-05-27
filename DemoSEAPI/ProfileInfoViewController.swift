@@ -34,14 +34,23 @@ print("the username is \(userName)")
         //userPPImageView = imageView.Load(ppImageString)
         userPPImageView.load(ppImageString)
     
-        //To clip the profile image to circle
+        //To clip the profile image to circle and add border
         self.userPPImageView.clipsToBounds = true
-   
- 
+        self.userPPImageView.layer.borderWidth = 5.0
+        self.userPPImageView.layer.borderColor = UIColor(red: 255.0, green: 255.0, blue: 255.0, alpha: 0.6).CGColor
+        
+        //initial state to perform the animation
+        userPPImageView.transform = CGAffineTransformMakeScale(0.0, 0.0)
         
     }
     
-
+    
+    override func viewDidAppear(animated: Bool) {
+        UIView.animateWithDuration(0.4, delay: 0.0, options: [], animations: {
+            self.userPPImageView.transform = CGAffineTransformIdentity
+            }, completion: nil)
+    }
+    
  
 
 }

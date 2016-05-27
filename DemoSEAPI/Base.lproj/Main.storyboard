@@ -29,19 +29,6 @@
                                     <segue destination="s55-cG-dsJ" kind="unwind" unwindAction="close:" id="Qbx-D5-Lb4"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JMY-sd-XEA">
-                                <rect key="frame" x="60" y="64" width="200" height="200"/>
-                                <color key="backgroundColor" red="0.95686274509803915" green="0.50196078431372548" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="HuV-dS-3c8"/>
-                                    <constraint firstAttribute="width" constant="200" id="PB3-Fu-vH3"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
-                                        <integer key="value" value="100"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVv-0Q-fXp">
                                 <rect key="frame" x="60" y="323" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -81,28 +68,41 @@
                                 <color key="textColor" red="0.18431372549019609" green="0.58823529411764708" blue="0.90980392156862744" alpha="0.90727370689655173" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JMY-sd-XEA">
+                                <rect key="frame" x="60" y="80" width="200" height="200"/>
+                                <color key="backgroundColor" red="0.95686274509803915" green="0.50196078431372548" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="HuV-dS-3c8"/>
+                                    <constraint firstAttribute="width" constant="200" id="PB3-Fu-vH3"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                        <integer key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.1764705882352941" green="0.1803921568627451" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.1764705882" green="0.18039215689999999" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="JMY-sd-XEA" firstAttribute="top" secondItem="9Zb-PK-xjb" secondAttribute="bottom" constant="6" id="1Zn-1o-QmH"/>
                             <constraint firstItem="9Zb-PK-xjb" firstAttribute="trailing" secondItem="sB8-c6-3pr" secondAttribute="trailingMargin" id="2Lf-HR-qEs"/>
                             <constraint firstItem="9Zb-PK-xjb" firstAttribute="top" secondItem="mtn-Pr-Xz3" secondAttribute="bottom" constant="8" id="3aa-9F-o8J"/>
                             <constraint firstItem="tLe-jm-D68" firstAttribute="baseline" secondItem="I2N-8R-piU" secondAttribute="baseline" id="54l-nz-BSj"/>
                             <constraint firstItem="Jbb-ey-lQp" firstAttribute="top" secondItem="tLe-jm-D68" secondAttribute="bottom" constant="20" id="7X0-7A-wbp"/>
                             <constraint firstItem="tLe-jm-D68" firstAttribute="leading" secondItem="Jbb-ey-lQp" secondAttribute="leading" id="CKH-eo-Fgr"/>
+                            <constraint firstItem="JMY-sd-XEA" firstAttribute="top" secondItem="mtn-Pr-Xz3" secondAttribute="bottom" constant="60" id="DFG-WL-wxx"/>
                             <constraint firstItem="I2N-8R-piU" firstAttribute="trailing" secondItem="cRP-id-gay" secondAttribute="trailing" id="Dn6-ER-MdC"/>
                             <constraint firstItem="kos-44-YhT" firstAttribute="trailing" secondItem="I2N-8R-piU" secondAttribute="trailing" id="EaH-f8-2bn"/>
-                            <constraint firstItem="dVv-0Q-fXp" firstAttribute="leading" secondItem="JMY-sd-XEA" secondAttribute="leading" id="FLO-kR-x4c"/>
-                            <constraint firstItem="JMY-sd-XEA" firstAttribute="centerX" secondItem="sB8-c6-3pr" secondAttribute="centerX" id="J20-mc-lIo"/>
                             <constraint firstItem="dVv-0Q-fXp" firstAttribute="baseline" secondItem="kos-44-YhT" secondAttribute="baseline" id="J4R-Fo-idu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kos-44-YhT" secondAttribute="trailing" constant="17" id="MOc-Od-d6K"/>
                             <constraint firstItem="kos-44-YhT" firstAttribute="leading" secondItem="I2N-8R-piU" secondAttribute="leading" id="Rmg-2q-02t"/>
                             <constraint firstItem="I2N-8R-piU" firstAttribute="leading" secondItem="tLe-jm-D68" secondAttribute="trailing" constant="34" id="TZf-F7-teL"/>
+                            <constraint firstItem="JMY-sd-XEA" firstAttribute="centerX" secondItem="sB8-c6-3pr" secondAttribute="centerX" id="U8i-p6-gIq"/>
                             <constraint firstItem="Jbb-ey-lQp" firstAttribute="baseline" secondItem="cRP-id-gay" secondAttribute="baseline" id="ZYm-04-hnk"/>
                             <constraint firstItem="I2N-8R-piU" firstAttribute="leading" secondItem="cRP-id-gay" secondAttribute="leading" id="b2P-Q5-M7k"/>
                             <constraint firstItem="tLe-jm-D68" firstAttribute="top" secondItem="dVv-0Q-fXp" secondAttribute="bottom" constant="22" id="e99-Zi-Ie9"/>
-                            <constraint firstItem="dVv-0Q-fXp" firstAttribute="top" secondItem="JMY-sd-XEA" secondAttribute="bottom" constant="59" id="iwW-Rz-JN5"/>
                             <constraint firstItem="dVv-0Q-fXp" firstAttribute="leading" secondItem="tLe-jm-D68" secondAttribute="leading" id="pfQ-Um-07t"/>
+                            <constraint firstItem="kos-44-YhT" firstAttribute="top" secondItem="JMY-sd-XEA" secondAttribute="bottom" constant="43" id="rMd-5v-4Fp"/>
+                            <constraint firstItem="JMY-sd-XEA" firstAttribute="leading" secondItem="dVv-0Q-fXp" secondAttribute="leading" id="wWD-Ix-PSI"/>
                             <constraint firstItem="kos-44-YhT" firstAttribute="leading" secondItem="dVv-0Q-fXp" secondAttribute="trailing" constant="8" symbolic="YES" id="ws7-I3-aXh"/>
                         </constraints>
                     </view>
