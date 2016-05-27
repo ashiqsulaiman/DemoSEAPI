@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ProfileInfoViewController: UIViewController {
     
     var userName: String = ""
@@ -25,9 +26,19 @@ class ProfileInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+print("the username is \(userName)")
         userNameLabel.text = userName
+        userIDLabel.text = userId
+        userReputationLabel.text = userReputation
+        //userPPImageView = imageView.Load(ppImageString)
+        userPPImageView.load(ppImageString)
+    
+        //To clip the profile image to circle
+        self.userPPImageView.clipsToBounds = true
+   
  
+        
     }
     
 

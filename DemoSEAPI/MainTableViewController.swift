@@ -18,6 +18,11 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate, MainT
     var searchController = UISearchController(searchResultsController: nil)
     let requestManager = RequestManager()
     
+  // variables to send data to ShowPostViewController
+    var _userId:String = ""
+    var _userName:String = ""
+    var _userReputation:String = ""
+    var _ppImageString:String = ""
     
     var validatedText: String{
         return searchController.searchBar.text!.stringByReplacingOccurrencesOfString(" ", withString: "%20").lowercaseString
@@ -33,15 +38,27 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate, MainT
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //search controller customization
+        searchController.searchBar.placeholder = "Search posts..."
+        searchController.searchBar.tintColor = UIColor.whiteColor()
+        searchController.searchBar.barTintColor = UIColor(red: 47.0/255.0, green:150.0/255.0, blue: 232.0/255.0, alpha: 0.7)
+        
+        
+        searchController.searchBar.delegate = self
+        tableView.tableHeaderView = searchController.searchBar
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        definesPresentationContext = true
 
         
-    searchController.searchBar.delegate = self
-    tableView.tableHeaderView = searchController.searchBar
-    searchController.dimsBackgroundDuringPresentation = false
-    searchController.hidesNavigationBarDuringPresentation = false
-    definesPresentationContext = true
+        // table view cutomization
+        tableView.backgroundColor = UIColor(red: 45, green: 46, blue: 47, alpha: 0.2)
+        tableView.separatorColor = UIColor(red: 45, green: 46, blue: 47, alpha: 0.5)
+        //navigationController?.hidesBarsOnSwipe = true
         
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainTableViewController.updateSearchResults), name: "searchResultsUpdated", object: nil)
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainTableViewController.updateSearchResults), name: "searchResultsUpdated", object: nil)
         
         //Enabling self sizing cells
         tableView.estimatedRowHeight = 80.0
@@ -98,7 +115,7 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate, MainT
             }
         }
         
-        return cell
+            return cell
     }
     
   
@@ -116,62 +133,38 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate, MainT
    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowPost" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let _url = searchResults[indexPath.row]["link"].stringValue
                 let destinationController = segue.destinationViewController as! ShowPostViewController
-                destinationController.url = _url
+                destinationController.url = searchResults[indexPath.row]["link"].stringValue
             }
-            else if segue.identifier == "ProfileInfo" {
-                if let indexPath = tableView.indexPathForSelectedRow {
-                    
-                    let _userName = searchResults[indexPath.row]["owner"]["display_name"].stringValue
-                    // print("name dc: \(destinationController.userName)")
-                    let _userId = searchResults[indexPath.row]["owner"]["user_id"].stringValue
-                    let _userReputation = searchResults[indexPath.row]["owner"]["reputation"].stringValue
-                    let _ppImageString = searchResults[indexPath.row]["owner"]["profile_image"].stringValue
-                    let destinationController = segue.destinationViewController as! ProfileInfoViewController
-                    destinationController.userName = _userName
-                    destinationController.userId = _userId
-                    destinationController.userReputation = _userReputation
-                    destinationController.ppImageString = _ppImageString
 
-                    
-                }
-            }
-            
             
         }
+         if segue.identifier == "ProfileInfo" {
+            let destinationController = segue.destinationViewController as! ProfileInfoViewController
+            destinationController.userId = _userId
+            destinationController.userName = _userName
+            destinationController.userReputation = _userReputation
+            destinationController.ppImageString = _ppImageString
     }
-    
+    }
+ 
     @IBAction func close(segue:UIStoryboardSegue) {
         
     }
     
    
-//    @IBAction func showProfileInfo(sender: AnyObject) {
-//        print("tapped")
-//    }
-//    
-//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        showProfileInfo(indexPath.row)
-//    }
-   
-
     func profilePicTouchedAtIndex(index: Int) {
         print("ppic touched at rowIndex : \(index)")
-        
+        _userId = searchResults[index]["owner"]["user_id"].stringValue
+        print(_userId)
+        _userName = searchResults[index]["owner"]["display_name"].stringValue
+        _userReputation = searchResults[index]["owner"]["reputation"].stringValue
+        _ppImageString = searchResults[index]["owner"]["profile_image"].stringValue
         performSegueWithIdentifier("ProfileInfo", sender: nil)
         
         
     }
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "ProfileInfo" {
-//            if let indexPath = tableView.indexPathForSelectedRow {
-//                let _url = searchResults[indexPath.row]["link"].stringValue
-//                let destinationController = segue.destinationViewController as! ShowPostViewController
-//                destinationController.url = _url
-//            }
-//        }
-//    }
+
 
     
 }
