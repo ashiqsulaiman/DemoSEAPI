@@ -34,11 +34,16 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate, MainT
         didSet {
             
             tableView.reloadData()
+            loadingIndicator.stopAnimating()
         }
     }
         override func viewDidLoad() {
         super.viewDidLoad()
         
+         //hide the activity indicator when not loading
+         loadingIndicator.hidesWhenStopped = true
+            
+            
         //search controller customization
         searchController.searchBar.placeholder = "Search posts..."
         searchController.searchBar.tintColor = UIColor.whiteColor()
@@ -141,6 +146,12 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate, MainT
         updateSearchResults() // updates the populated array with emptied array
         requestManager.alamofireFunction(validatedText) //calls the function with the validatedText
        
+        
+        // start spinning the activity indicator
+        
+        self.loadingIndicator.transform = CGAffineTransformMakeScale(2.0, 2.0)
+       self.loadingIndicator.center = self.tableView.center
+                loadingIndicator.startAnimating()
         
     }
   
