@@ -14,6 +14,7 @@ import ImageLoader
 class MainTableViewController: UITableViewController, UISearchBarDelegate, MainTableViewCellDelegate {
     
     
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
    
     var searchController = UISearchController(searchResultsController: nil)
     let requestManager = RequestManager()
@@ -31,11 +32,11 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate, MainT
     //empty array to store the filtered results
     var searchResults:[JSON] = [] {
         didSet {
+            
             tableView.reloadData()
         }
-    } 
-    
-    override func viewDidLoad() {
+    }
+        override func viewDidLoad() {
         super.viewDidLoad()
         
         //search controller customization
@@ -64,7 +65,6 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate, MainT
         tableView.estimatedRowHeight = 80.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        
      
         
  }
@@ -72,7 +72,21 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate, MainT
     func updateSearchResults() {
         
         //print(requestManager.searchResults)
-        searchResults = requestManager.searchResults
+        
+        // alert view to display if there are no results
+        if   requestManager.noResultsCheck == true {
+            let alert = UIAlertController(title: "Oops!", message: "No results found", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "OK", style: .Default) { (Action) -> Void in
+            self.searchController.searchBar.becomeFirstResponder()
+            
+            }
+            alert.addAction(action)
+            self.presentViewController(alert, animated: true){}
+            
+        }
+        requestManager.noResultsCheck = false // set the flag to false again
+
+            searchResults = requestManager.searchResults
         }
     
     
@@ -149,6 +163,8 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate, MainT
     }
  
     @IBAction func close(segue:UIStoryboardSegue) {
+        
+        
         
     }
     

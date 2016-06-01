@@ -14,7 +14,7 @@ import SwiftyJSON
 class RequestManager {
 
 var searchResults = [JSON]()
-    
+
   
     //for pagination condition check
     var pageNumber = 1
@@ -27,6 +27,7 @@ var searchResults = [JSON]()
     }
     
     var hasMore = false
+    var noResultsCheck = false
     
     func alamofireFunction(query: String) {
         
@@ -36,13 +37,19 @@ var searchResults = [JSON]()
         Alamofire.request(.GET, url).responseJSON { (response) -> Void in
             
                                 if let value = response.result.value  as? [String: AnyObject] {
-                                let items = JSON(value["items"]!).arrayValue
-                                self.hasMore = JSON(value["has_more"]!).boolValue
-                                self.searchResults += items
-                                NSNotificationCenter.defaultCenter().postNotificationName("searchResultsUpdated", object: nil  )
+                                    let items = JSON(value["items"]!).arrayValue
+                                    if items.isEmpty {
+                                        self.noResultsCheck = true
+                                        
+                                    } else {
+                                      self.searchResults += items
+                                    }
+                                    self.hasMore = JSON(value["has_more"]!).boolValue
+                                    NSNotificationCenter.defaultCenter().postNotificationName("searchResultsUpdated", object: nil  )
                     
                     
-                }
+                                }
+            
                 
             }
         
@@ -50,7 +57,7 @@ var searchResults = [JSON]()
     }
     
     //to load the next page
-    func getNextPage(query: String) {    // validated text as ip parameter
+    func getNextPage(query: String) {    // validated text as i/p parameter
         pageNumber += 1
         alamofireFunction(query)
     }

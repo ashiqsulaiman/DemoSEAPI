@@ -49,6 +49,17 @@ print("the username is \(userName)")
         UIView.animateWithDuration(0.4, delay: 0.0, options: [], animations: {
             self.userPPImageView.transform = CGAffineTransformIdentity
             }, completion: nil)
+      
+
+        
+//        var animation: CATransition = CATransition()
+//        animation.delegate = self
+//        animation.duration = 1.75
+//        animation.timingFunction = .EaseInOut
+//        animation.type = "rippleEffect"
+//        view.layer.addAnimation(animation, forKey: nil)
+        
+        
     }
     
  
