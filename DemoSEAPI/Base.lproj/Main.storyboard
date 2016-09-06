@@ -169,10 +169,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="JeY-Vs-IOp">
-                            <rect key="frame" x="0.0" y="182" width="320" height="20"/>
+                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="jtC-ET-aaj">
+                            <rect key="frame" x="0.0" y="182" width="320" height="37"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="color" red="1" green="0.64705882349999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                         </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="90" id="y0D-LX-mBO" customClass="MainTableViewCell" customModule="DemoSEAPI" customModuleProvider="target">
@@ -244,7 +244,7 @@
                     <navigationItem key="navigationItem" title="Home" id="bce-ay-n0E"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="loadingIndicator" destination="JeY-Vs-IOp" id="ko4-3m-Plx"/>
+                        <outlet property="loadingIndicator" destination="jtC-ET-aaj" id="paL-ZF-eWg"/>
                         <segue destination="Sai-dN-U4U" kind="presentation" identifier="ProfileInfo" id="4Pf-m0-vFW"/>
                     </connections>
                 </tableViewController>
@@ -284,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBP-Ec-zht" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1361" y="-188"/>
+            <point key="canvasLocation" x="1397" y="-188"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yDW-NA-qiH">

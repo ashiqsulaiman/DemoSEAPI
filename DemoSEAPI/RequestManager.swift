@@ -1,11 +1,7 @@
-//
 //  RequestManager.swift
 //  DemoSEAPI
-//
 //  Created by ashiq on 28/03/16.
 //  Copyright © 2016 ashiq. All rights reserved.
-//
-
 import Foundation
 import Alamofire
 import SwiftyJSON

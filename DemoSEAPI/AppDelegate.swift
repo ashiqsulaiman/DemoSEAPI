@@ -31,6 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         print("In applicationDidFinishLaunchWithOptions")
         return true
+        
+        
+        //network status 
+               
     }
 
     func applicationWillResignActive(application: UIApplication) {

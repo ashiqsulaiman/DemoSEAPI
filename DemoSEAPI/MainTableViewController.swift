@@ -15,7 +15,8 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate, MainT
     
     
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
-   
+  
+    
     var searchController = UISearchController(searchResultsController: nil)
     let requestManager = RequestManager()
     
@@ -40,6 +41,9 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate, MainT
         override func viewDidLoad() {
         super.viewDidLoad()
         
+           
+            
+            
          //hide the activity indicator when not loading
          loadingIndicator.hidesWhenStopped = true
             
@@ -92,6 +96,7 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate, MainT
         requestManager.noResultsCheck = false // set the flag to false again
 
             searchResults = requestManager.searchResults
+        
         }
     
     
@@ -149,7 +154,9 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate, MainT
         
         // start spinning the activity indicator
         
-        self.loadingIndicator.transform = CGAffineTransformMakeScale(2.0, 2.0)
+        //self.loadingIndicator.transform = CGAffineTransformMakeScale(1.5, 1.5)
+        
+
        self.loadingIndicator.center = self.tableView.center
                 loadingIndicator.startAnimating()
         
@@ -191,6 +198,7 @@ class MainTableViewController: UITableViewController, UISearchBarDelegate, MainT
         
         
     }
+    
 
 
     
